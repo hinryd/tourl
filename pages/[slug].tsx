@@ -4,7 +4,7 @@ interface Props {
     error: string
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async ctx => {
     const slug = encodeURIComponent(ctx.query.slug as string)
     const res = await fetch(`${process.env.PROD_URL}/api/${slug}`)
     const { error, data } = await res.json()

@@ -35,9 +35,9 @@
     flex-grow: 1;
 }
 
-.input:focus {
+/* .input:focus {
     outline: none;
-}
+} */
 
 .copy {
     border: 0;
