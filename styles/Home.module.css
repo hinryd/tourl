@@ -35,13 +35,13 @@
     flex-grow: 1;
 }
 
-/* .input:focus {
+.input:focus {
     outline: none;
-} */
+}
 
 .copy {
     border: 0;
-    background-color: #ddd;
+    background-color: #fff;
     color: black;
     width: 3rem;
 }
