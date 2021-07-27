@@ -1,3 +1,4 @@
+import type { FormEvent } from 'react'
 import styles from '../styles/Home.module.css'
 import { useStore } from '../lib/store'
 import RefreshIcon from './RefreshIcon'
@@ -11,7 +12,7 @@ const Form = () => {
         navigator.clipboard.writeText(url)
     }
 
-    const handleReset = e => {
+    const handleReset = (e: FormEvent) => {
         e.preventDefault()
         idle()
     }
