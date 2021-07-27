@@ -1,12 +1,15 @@
 import firebase from 'firebase-admin'
+import key from '../service_key.json'
 
 if (!firebase.apps.length) {
     firebase.initializeApp({
-        credential: firebase.credential.cert({
-            projectId: process.env.FIREBASE_PROJECT_ID,
-            privateKey: process.env.FIREBASE_PRIVATE_KEY,
-            clientEmail: process.env.FIREBASE_CLIENT_EMAIL
-        })
+        credential: firebase.credential.cert(
+            key ?? {
+                projectId: process.env.FIREBASE_PROJECT_ID,
+                privateKey: process.env.FIREBASE_PRIVATE_KEY,
+                clientEmail: process.env.FIREBASE_CLIENT_EMAIL
+            }
+        )
     })
 }
 
