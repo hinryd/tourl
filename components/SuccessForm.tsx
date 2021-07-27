@@ -6,24 +6,28 @@ import CopyIcon from './CopyIcon'
 
 const Form = () => {
     const url = useStore(s => s.url)
+    const setUrl = useStore(s => s.setUrl)
     const idle = useStore(s => s.idle)
 
-    const copyUrl = () => {
+    const copyUrl = (e: FormEvent) => {
+        e.preventDefault()
         navigator.clipboard.writeText(url)
     }
 
     const handleReset = (e: FormEvent) => {
         e.preventDefault()
         idle()
+        setUrl('')
     }
 
     return (
-        <form className={`${styles.form}`} onSubmit={handleReset}>
+        <form className={styles.form} onSubmit={handleReset}>
             <input
-                className={styles.input}
+                className={`${styles.input} ${styles.copy}`}
                 type="text"
                 value={url}
                 onClick={copyUrl}
+                readOnly
             />
             <button className={styles.copy} onClick={copyUrl}>
                 <CopyIcon />
