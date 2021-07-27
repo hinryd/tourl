@@ -18,21 +18,13 @@ const Form = () => {
         store.setUrl(e.target.value)
     }
 
-    const onClick = async (e: MouseEvent) => {
-        e.preventDefault()
-        navigator.clipboard.writeText(store.url)
-    }
-
     const shorten = async (url: string) => {
         store.loading()
 
-        const res = await fetch('/api/new', {
+        const { error, data }: JsonResponse = await fetch('/api/new', {
             method: 'POST',
             body: url
-        })
-        const { error, data } = (await res.json()) as JsonResponse
-
-        console.log(error, data)
+        }).then(r => r.json())
 
         if (error) {
             store.error()
