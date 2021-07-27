@@ -1,6 +1,6 @@
 {
     "trailingComma": "none",
-    "arrowParens": "always",
+    "arrowParens": "avoid",
     "tabWidth": 4,
     "useTabs": false,
     "semi": false,
