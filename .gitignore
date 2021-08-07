@@ -34,3 +34,4 @@ yarn-error.log*
 .vercel
 
 .env
+service_key.json
