@@ -1,5 +1,5 @@
 .main {
-    background-color: #eeeeee;
+    background-color: #eee;
     padding: 1rem;
     display: flex;
     align-items: center;
@@ -56,6 +56,10 @@
     color: white;
     border-radius: 0 0.5rem 0.5rem 0;
     width: 4rem;
+}
+
+.button:disabled {
+    background-color: #aaa;
 }
 
 .success {
